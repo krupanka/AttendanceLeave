@@ -1,0 +1,30 @@
+<br><br><br>
+  <div class="sidebar">
+       <h4 align="center">Manager List</h4><hr>
+       <a routerLink="/manager/managerleave/managerpendingleave">Manager Pending Leave</a>
+       <a routerLink="/manager/managerleave/managerhistory">Manager History </a>
+    </div> <br><br>
+
+<form>
+      <div class="col-md-offset-2 col-md-8">
+      <div class="panel panel-primary">
+      <div class="panel-heading text-center">Manager Pending Details</div>
+      <div class="panel-body">
+      <div class="form-group">
+             <label for="Date" class="control-label">Employee Name : {{employee_name['first_name'] }}  {{employee_name['last_name'] }}</label><br><br>
+             <label for="leave" class="control-label">Leave Type : {{leave_type}}</label><br><br>
+             <label for="reason" class="control-label">Dates:{{no_of_days}}</label><br><br>
+             <label for="Date" class="control-label">No of days:{{starting_date}}</label><br><br>
+             <label for="leave" class="control-label">reason : {{reason}}</label><br><br>
+
+      <form #submitApprovalForm="ngForm" (ngSubmit)="submitApprovalList(event)" class="form-signin" >
+          <button [disabled]="submitApprovalForm.invalid" class="btn btn-primary">Approval</button></form><br>
+      <form #cancelRejectForm="ngForm" (ngSubmit)="cancelrejectList(event)" class="form-signin">
+          <button [disabled]="cancelRejectForm.invalid"  class="btn btn-danger">Reject</button>
+      </form>
+</div>
+</div>
+</div>
+ </div>
+</form>
+

@@ -1,0 +1,38 @@
+<br><hr>
+<!--sidebar stayle sheet-->
+   <div class="sidebar">
+       <h4 align="center">Employee Leave List</h4><hr>
+       <a routerLink="/employee/employeeLeave/newleaverequest">New Leave Request</a>
+       <a routerLink="/employee/employeeLeave/employeehistory">Employee History</a>
+  </div><br>
+
+  <form #submitleaveForm="ngForm" (ngSubmit)="submitnewleave(event)" class="form-signin">
+        <div class="col-md-offset-2 col-md-8">
+          <div class="panel panel-primary">
+            <div class="panel-heading text-center">Employee New Request</div>
+               <div class="panel-body">
+                  <div class="form-group">
+                         <label>For you {{applicable}} Annual Leaves are Pending</label><br><hr>
+                        <label for="leave_type" class="control-label" >Leave Type</label><br>
+                        <select id="leave_type" class="form-control" name="leave_type" [(ngModel)]="model.leave_type" required #leave_type="ngModel">
+                              <option>Annual</option>
+                               <option >LOP</option>
+                       </select><br><br>
+                         <label for="reason" class="control-label">Reason</label><br>
+                         <textarea rows="4" cols="50" id="reason" class="form-control" name="reason" [(ngModel)]="model.reason" required #reason="ngModel" >
+                         </textarea><br><br>
+                        <label for="Date" class="control-label">Date</label>
+                        <input type="date" id="start_date" class="form-control" name="start_date" [(ngModel)]="model.start_date" required #start_date="ngModel">
+                        <span *ngIf="start_date.touched && start_date.invalid" class="help-block">start_date can't be blank</span><br>
+                        <label for="leave" class="control-label">No Of Days</label>
+                        <input type="text" id="no_of_days" class="form-control" name="no_of_days" [(ngModel)]="model.no_of_days" required #no_of_days="ngModel">
+                       <span *ngIf="no_of_days.touched && no_of_days.invalid" class="help-block">no_of_days can't be blank</span><br><br>
+                      <br><br><hr>
+                      <button  [disabled]="submitleaveForm.invalid" class= "btn btn-primary btn btn-block-sm" >Submit</button>&nbsp;
+                  </div>
+              </div>
+          </div>
+    </div>
+</form>
+
+

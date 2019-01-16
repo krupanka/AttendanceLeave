@@ -1,0 +1,47 @@
+<br><hr>
+   <div class="sidebar">
+       <h4 align="center">Employee Claim List</h4><hr>
+       <a routerLink="/employee/employeeClaim/employeeNewClaim">Employee New Claim</a>
+       <a routerLink="/employee/employeeClaim/employeeClaimHistory">Employee Claim History</a>
+  </div><br>
+  <div class="col-md-offset-2 col-md-10">
+    <div class="panel panel-primary">
+         <div class="panel-heading text-center">User Claim histroy</div>
+            <div class="panel-body">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="search..." [(ngModel)]="query">
+                </div>
+            </div>
+
+<div class="table-responsive">
+ <table id="dcustomer" class="table table-hover table-bordered table-sm" width="100%">
+    <thead>
+         <tr>
+             <th></th>
+             <th>Claim_Type</th>
+             <th>Description</th>
+             <th>Amount</th>
+             <th>Date</th>
+             <th>Document</th>
+             <th>Status</th>
+             <th></th>
+
+           </tr>
+           <tr *ngFor="let claim of claimhistory">
+             <td>
+                <a href="/employee/employeeClaim/employeeClaimHistory/employeeClaimHistoryDetails/{{claim.id}}/" >  <span class="glyphicon glyphicon-forward" style="color: blue"></span></a>
+             </td>
+             <td>{{claim.claim_type}}</td>
+             <td>{{claim.description}}</td>
+             <td>{{claim.amount}}</td>
+             <td>{{claim.date}}</td>
+             <td>{{claim.document}}</td>
+             <td>{{claim.status}}</td>
+             <td></td>
+            
+             </tr>
+         </thead>
+     </table>
+ </div>
+</div>
+</div>

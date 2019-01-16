@@ -1,0 +1,31 @@
+<br><hr>
+   <div class="sidebar">
+       <h4 align="center">Employee Claim List</h4><hr>
+       <a routerLink="/employee/employeeClaim/employeeNewClaim">Employee New Claim</a>
+       <a routerLink="/employee/employeeClaim/employeeClaimHistory">Employee Claim History</a>
+  </div><br>
+
+  <form>
+    <div class="col-md-offset-2 col-md-8">
+        <div class="panel panel-primary">
+          <div class="panel-heading text-center">Employee Claim view List</div>
+            <div class="panel-body">
+               <div class="form-group">
+                  <label for="Date" class="control-label">Claim_Type:{{claim_type}}</label><br>
+                  <label for="purpose" class="control-label">Description:{{description}}</label><br>
+                  <label for="amount" class="control-label">Amount:{{amount}}</label><br>
+                  <label for="file" class="control-label">Date:{{date}}</label><br>
+                <a href="{{document}}" target="_blank"> <label for="types" class="control-label">Document:Attachment File</label></a><br>
+                  <label for="types" class="control-label">Status:{{status}}</label>
+                <hr >
+                
+                    <button routerLink="/employeeClaimHistory/employeeClaimHistoryDetails/employeeClaimEdit/{{id}}" class="btn btn-primary btn btn-block-sm">Edit</button> &nbsp;
+                  
+                    <button class= "btn btn-primary btn btn-block-sm" >Deleted</button>
+                   
+                </div>
+             </div>
+           </div>
+         </div>
+   </form>
+

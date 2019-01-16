@@ -1,0 +1,45 @@
+<br><br><br>
+  <div class="sidebar">
+       <h4 align="center">Manager List</h4><hr>
+       <a routerLink="/manager/managerleave/managerpendingleave">Manager Pending Leave</a>
+       <a routerLink="/manager/managerleave/managerhistory">Manager History </a>
+    </div> <br><br>
+ 
+  
+      <div class="col-md-offset-2 col-md-8">
+          <div class="panel panel-primary">
+               <div class="panel-heading text-center">Manger Pending Leave</div>
+                  <div class="panel-body">
+                       <div class="col-md-4">
+                          <input type="text" class="form-control" placeholder="search...">
+                    </div>
+                </div>
+ <div class="table-responsive">
+   <table id="dcustomer" class="table table-hover table-bordered table-sm" width="100%">
+      <thead>
+           <tr>
+              <th></th>
+               <th>Employee Name</th>
+               <th>Leave Type</th>
+               <th>Dates</th>
+               <th>No of days</th>
+               <th></th>
+          </tr>
+          <tr *ngFor=" let item of managerpending|search1:query">
+          <td>
+             <span class="glyphicon glyphicon-forward" style="color: blue"></span>
+          </td>
+           <td>{{item.employee.first_name}} {{item.employee.last_name}}</td>
+           <td>{{item.leave_type}}</td>
+           <td>{{item.start_date}}</td>
+           <td>{{item.no_of_days}}</td>
+           <td>
+              <a href="/manager/managerleave/managerpendingleave/managerpendingdetails/{{item.id}}"data-toggle="tooltip" data-placement="top" title="Update Leave" > <span class="glyphicon glyphicon-edit"></span></a>
+            </td>
+         </tr>
+    </thead>
+ </table>
+</div>
+</div>
+</div>
+    

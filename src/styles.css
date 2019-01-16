@@ -1,0 +1,118 @@
+/* You can add global styles to this file, and also import other style files */
+/* stylesheet can use NavBar and SideBar*/
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+/* to display Header Sidebar Content*/
+#wrapper{
+            border:solidgray;
+            padding:10px;
+  
+        }
+ body {
+          margin: 0;
+           font-family: "Lato", sans-serif;
+      }
+ .sidebar {
+               left:0;
+               margin: 0;
+               padding: 0;
+               bottom:100;
+               width: 190px;
+               background-color: #f1f1f1;
+               position: fixed;
+               height: 100%;
+                overflow: auto;
+         }
+  
+.sidebar a {
+               display: block;
+               color: black;
+               padding: 16px;
+               text-decoration: none;
+            }
+   
+.sidebar a.active {
+                     background-color: #4CAF50;
+                      color: white;
+                   }
+  
+.sidebar a:hover:not(.active) {
+                                  background-color: #555;
+                                  color:white;
+                               }
+.main {
+         margin-left: 160px; /* Same as the width of the sidenav */
+         padding: 0px 50px;
+     }
+  
+div.content {
+               margin-left: 200px;
+               padding: 1px 16px;
+                height: 1000px;
+             }
+
+@media screen and (max-width: 700px) {
+  
+.sidebar {
+             width: 100%;
+             height: auto;
+             position: relative;
+           }
+.sidebar a {
+                float: left;
+             }
+div.content {
+               margin-left: 0;
+            }
+  }
+  
+@media screen and (max-width: 400px) {
+    .sidebar a {
+                   text-align: center;
+                    float: none;
+                 }
+              }
+  
+ /* To display the Navbar styleSheet*/
+ #navbar{
+            position: fixed;
+            left: 0;
+            top:0;
+            height:55px;
+            background-color:black;
+            font-weight: bold;
+             right:0;
+         }
+  
+  /* Logo image */
+
+  .img  {
+           position: fixed;
+           left: 0;
+           height:50px;
+          padding-top: 12px;
+       }
+  
+.topnav-right {
+    
+                 float: right;
+                 position:relative;
+                  padding-bottom:0px;
+             }
+.topnav-right a:hover {
+                          border-bottom: 3px solid blue;
+                      }
+  
+  /* Footer Content StyleSheet */
+
+    .footer {
+               position: fixed;
+               left: 0;
+               bottom: 0;
+                width: 100%;
+               background-color:blue;
+               color: white;
+               text-align: center;
+             }
+

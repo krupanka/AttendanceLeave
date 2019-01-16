@@ -1,0 +1,28 @@
+<br><br><br>
+  <div class="sidebar">
+       <h4 align="center">Admin List</h4><hr>
+       <a routerLink="/admin/adminLeave/applicableLeave">Applicable List</a>
+       <a routerLink="/admin/adminLeave/adminleavehistory">Admin History</a>
+    </div> <br><br>
+    <form >
+      <div class="col-md-offset-2 col-md-8">
+        <div class="panel panel-primary">
+          <div class="panel-heading text-center">Admin History Details</div>
+             <div class="panel-body">
+                <div class="form-group">
+              
+                    <label>Employee Name: {{employee_name.first_name}} {{employee_name.last_name}} </label><br>
+                    <label>Leave Type:{{leave_type}}</label><br>
+                    <label>Reason:{{reason}}</label><br>
+                      <label> Start Date:{{start_date}}</label><br>
+                      <label>No Of Days:{{no_of_days}}</label><br>
+                      <label>Status:{{status}}</label>
+                   <hr>
+                   <form #canceldetailForm="ngForm" (ngSubmit)="canceldetails(event)" class="form-signin">
+                    <button [disabled]="canceldetailForm.invalid" class= "btn btn-danger btn btn-block-sm" >Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+  </div>
+</form>

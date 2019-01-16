@@ -1,0 +1,31 @@
+<br><hr>
+   <div class="sidebar">
+       <h4 align="center">Employee Claim List</h4><hr>
+       <a routerLink="/employee/employeeClaim/employeeNewClaim">Employee New Claim</a>
+       <a routerLink="/employee/employeeClaim/employeeClaimHistory">Employee Claim History</a>
+  </div><br>
+  <form #submitForm="ngForm" (ngSubmit)="submitappliedleave(event)" class="form-signin">
+    <div class="col-md-offset-2 col-md-8">
+      <div class="panel panel-primary">
+        <div class="panel-heading text-center">Admin Applicable Edit List</div>
+           <div class="panel-body">
+              <div class="form-group">
+                    <label for="claim_type" class="control-label">Claim_type</label>
+                    <input type="text" id="Claim_type" class="form-control" name="claim_type" value={{claim_type}}  [(ngModel)]="model.claim_type" required #claim_type="ngModel">
+                    <label for="description" class="control-label">Description</label>
+                    <input type="text" id="description" class="form-control" name="description"  [(ngModel)]="model.description" required #description="ngModel">
+                    <label for="amount" class="control-label">Amount</label>
+                    <input type="text" id="amount" class="form-control" name="amount"  [(ngModel)]="model.amount" required #amount="ngModel">
+                    <label for="date" class="control-label">Date</label>
+                    <input type="text" id="date" class="form-control" name="date"  [(ngModel)]="model.date" required #date="ngModel">
+                    <label for="document" class="control-label">Document</label>
+                    <input type="text" id="document" class="form-control" name="document"  [(ngModel)]="model.document" required #document="ngModel">
+                    <label for="status" class="control-label">Status</label>
+                    <input type="text" id="status" class="form-control" name="status"  [(ngModel)]="model.status" required #status="ngModel">
+                    <hr>
+                    <button class="btn btn-primary btn btn-block-sm" >Submit</button>&nbsp;
+               </div>
+          </div>
+      </div>
+</div>
+</form>

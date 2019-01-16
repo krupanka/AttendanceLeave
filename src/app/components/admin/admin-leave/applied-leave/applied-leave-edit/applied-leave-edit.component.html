@@ -1,0 +1,24 @@
+<br><br><br>
+  <div class="sidebar">
+       <h4 align="center">Admin List</h4><hr>
+       <a routerLink="/admin/adminLeave/applicableLeave">Applicable List</a>
+       <a routerLink="/admin/adminLeave/adminleavehistory">Admin History</a>
+    </div> <br><br>
+    <form #submitleaveappliedForm="ngForm" (ngSubmit)="submitappliedleave(event)" class="form-signin">
+      <div class="col-md-offset-2 col-md-8">
+        <div class="panel panel-primary">
+          <div class="panel-heading text-center">Admin Applicable Edit List</div>
+             <div class="panel-body">
+                <div class="form-group">
+                      <label for="leave" class="control-label">No Of Days</label>
+                      <input type="text" id="no_of_days" class="form-control" name="no_of_days" value="{{leave}}" [(ngModel)]="model.leaves" required #leaves="ngModel"><hr>
+                      <button 
+                        [disabled]="submitleaveappliedForm.invalid"
+                        class="btn btn-primary btn btn-block-sm" >Submit</button>&nbsp;
+                 </div>
+            </div>
+        </div>
+  </div>
+</form>
+
+

@@ -1,0 +1,32 @@
+<br><hr>
+   <div class="sidebar">
+       <h4 align="center">Employee Claim List</h4><hr>
+       <a routerLink="/employee/employeeClaim/employeeNewClaim">Employee New Claim</a>
+       <a routerLink="/employee/employeeClaim/employeeClaimHistory">Employee Claim History</a>
+  </div><br>
+  <form #submitclaimForm="ngForm" (ngSubmit)="submitnewclaim(event)" class="form-signin">
+    <div class="col-md-offset-2 col-md-8">
+      <div class="panel panel-primary">
+         <div class="panel-heading text-center">Employee New Claim</div>
+              <div class="panel-body">
+                   <div class="form-group">
+                        <label for="claim_type" class="control-label" >Claim Type</label><br>
+                        <select id="claim_type" class="form-control" name="claim_type" [(ngModel)]="model.claim_type" required #claim_type="ngModel"> 
+                         <option *ngFor="let type of claimtype">{{type.claim_type3}}</option>
+                       </select><br>
+                      <label for="description" class="control-label">Description</label>
+                      <textarea rows="4" cols="50" id="description" class="form-control" name="description" [(ngModel)]="model.description" required #description="ngModel" >
+                       </textarea><br>
+                     <label for="amount" class="control-label">Amount</label>
+                     <input type="text" id="amount" class="form-control" name="amount" [(ngModel)]="model.amount" required #amount="ngModel" ><br>
+                     <label for="Date" class="control-label">Date</label>
+                     <input type="date" id="Date" class="form-control" name="Date" [(ngModel)]="model.date" required #date="ngModel" ><br>
+                     <label for="file" class="control-label">Select file:</label><br><br>
+                     <input type="file" >
+                  </div><hr>
+              <button class= "btn btn-primary btn btn-block-sm" >Submit</button>&nbsp;
+         </div>
+     </div>
+ </div>
+</form>
+
